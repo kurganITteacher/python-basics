@@ -1,4 +1,4 @@
-# data read
+# # data read
 # student_marks = []
 # while True:
 #     mark = input('введите оценку студента:\n')
