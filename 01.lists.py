@@ -1,5 +1,3 @@
-import sys
-
 # to contain -> container -> arrays
 # to read -> reader
 
@@ -16,14 +14,25 @@ import sys
 # myVar -> cameCase (Java, JS)
 
 # 'ya.ru' -> reference
-my_var = [12, '15', 95.32, 55, True]  # var -> reference
-print(my_var, type(my_var), id(my_var), sys.getsizeof(my_var))
+# my_var = [12, '15', 95.32, 55, True]  # var -> reference
+# print(my_var, type(my_var), id(my_var), sys.getsizeof(my_var))
+#
+# my_var = 12
+# print(my_var, type(my_var), id(my_var), sys.getsizeof(my_var))
+#
+# my_var = 12.5
+# print(my_var, type(my_var), id(my_var), sys.getsizeof(my_var))
+#
+# my_var = '12.5'
+# print(my_var, type(my_var), id(my_var), sys.getsizeof(my_var))
 
-my_var = 12
-print(my_var, type(my_var), id(my_var), sys.getsizeof(my_var))
+student_marks = []
+while True:
+    mark = input('введите оценку студента:\n')
+    if mark:  # '' == False, 0 == False, [] == False
+        student_marks.append(mark)
+    else:
+        break
 
-my_var = 12.5
-print(my_var, type(my_var), id(my_var), sys.getsizeof(my_var))
-
-my_var = '12.5'
-print(my_var, type(my_var), id(my_var), sys.getsizeof(my_var))
+print('ввод завершен')
+print(student_marks)
