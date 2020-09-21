@@ -10,6 +10,17 @@ while True:
     #     print('вы ввели не число')
     #     continue
 
+    # if mark.isdigit():  # isdigit() -> 0..9
+    #     mark = int(mark)
+    #     if 1 <= mark <= 5:
+    #         student_marks.append(mark)
+    #     elif mark > 5:
+    #         print("Оценка больше 5")
+    #     elif mark < 1:
+    #         print("Оценка меньше 1")
+    # else:
+    #     print('ошибка:', mark)
+
     try:
         mark = int(mark)
         if 1 <= mark <= 5:
