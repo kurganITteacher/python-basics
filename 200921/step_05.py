@@ -26,7 +26,11 @@ for lesson_date, mark, mark_2 in zip(lesson_dates, student_marks, student_2_mark
     print(lesson_date)
 
 curren_date = input('введите дату:\n')
-date_index = lesson_dates.index(curren_date)
+try:
+    date_index = lesson_dates.index(curren_date)
+    print('оценки студентов за', lesson_dates[date_index], ':', student_marks[date_index], student_2_marks[date_index])
+except Exception as e:
+    print('ошибка:', e)
 # date_index = 3
 # print(date_index, student_marks[date_index], student_2_marks[date_index])
-print('оценки студентов за', lesson_dates[date_index], ':', student_marks[date_index], student_2_marks[date_index])
+
