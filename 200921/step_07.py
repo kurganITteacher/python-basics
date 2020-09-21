@@ -4,17 +4,19 @@
 # assertion
 # TDD -> test driven development
 
-class_pupils = 'Полина, Антон, Арсений, Евгений, Алексей, Тимур'
+# class_pupils = 'Полина, Антон, Арсений, Евгений, Алексей, Тимур'
+class_pupils = 'Полина, Антон, Арсений , Евгений,  Алексей, Тимур '
 correct_result = ['Полина', 'Антон', 'Арсений', 'Евгений', 'Алексей', 'Тимур']
 
-# print('ученики класса:', class_pupils)
-# ...
-result = class_pupils.split(', ')
+_result = class_pupils.split(', ')  # raw
+result = []
+for item in _result:
+    # print(item, '->', item.strip())
+    result.append(item.strip())
 
+# print(result)
 assert result == correct_result, 'алгоритм реализован неверно'
 # assert True or False: True -> calm, False -> assertion ERROR
 
 # if not result == correct_result:
 #     raise AssertionError('алгоритм реализован неверно')
-
-print(result)
