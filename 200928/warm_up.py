@@ -67,16 +67,18 @@ src_data = '''
 for row in src_data.split('\n'):
     # print(row)
     # row = ''  -> bool('') -> False => not '' -> True
-    if not row:  # check if row is empty
-        continue
+    # if not row:  # check if row is empty -> adv. validation
+    #     continue
+    try:
+        remote_IP_address, row_tail = row.split(maxsplit=1)
+        _, _request_datetime = row_tail.split('[', maxsplit=1)
+        request_datetime, row_tail = _request_datetime.split(']', maxsplit=1)
 
-    remote_IP_address, row_tail = row.split(maxsplit=1)
-    _, _request_datetime = row_tail.split('[', maxsplit=1)
-    request_datetime, row_tail = _request_datetime.split(']', maxsplit=1)
+        _, _request_method, row_tail = row_tail.split('"', maxsplit=2)
+        request_method, requested_resource, _ = _request_method.split(maxsplit=2)
 
-    _, _request_method, row_tail = row_tail.split('"', maxsplit=2)
-    request_method, requested_resource, _ = _request_method.split(maxsplit=2)
-
-    parsed_row = [remote_IP_address, request_datetime, request_method, requested_resource]
-    parsed_row = list(map(str.strip, parsed_row))
-    print(parsed_row)
+        parsed_row = [remote_IP_address, request_datetime, request_method, requested_resource]
+        parsed_row = list(map(str.strip, parsed_row))
+        print(parsed_row)
+    except Exception as e:
+        print('error:', e)
