@@ -1,3 +1,6 @@
+import json
+
+
 def parse_marks(f_name):
     result = []
     with open(f_name, 'r', encoding='utf-8') as f:
@@ -71,3 +74,8 @@ def save_marks(f_name, parsed_marks):
         for row in parsed_marks:
             f.write(', '.join(map(str, row)))
             f.write('\n')
+
+
+def save_marks_as_dict(f_name, parsed_marks_as_dict):
+    with open(f_name, 'w', encoding='utf-8') as f:
+        json.dump(parsed_marks_as_dict, f)
