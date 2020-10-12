@@ -48,6 +48,10 @@ class SuperHero(WaterElemental, FireElemental, EarthElemental):
 
 # classic inheritance
 class SouthWaterElemental(WaterElemental):
+# class SouthWaterElemental:
+#     def create_river(self):
+#         print('here is the river')
+
     def create_waterfall(self):
         print('waterfall sounds')
 
