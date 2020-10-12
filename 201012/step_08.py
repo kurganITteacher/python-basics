@@ -21,7 +21,7 @@ class Student(People):
         self.group_number = group_number
 
     def say_group(self):
-        print('my group is', self.group_number)
+        print('группа', self.group_number)
 
 
 class Teacher(People):
@@ -45,21 +45,23 @@ class HeadTeacher(Teacher):
         print('привет, я завуч, меня зовут', self.first_name, self.patronymic, self.last_name, '!')
 
 
-student_1 = Student('Иван', 'Иванов')
+# # positional ARGumentS -> agrs
+# student_1 = Student('Иван', 'Иванов', '№43')
+# named arguments, Key Word ARGumentS -> kwargs
+student_1 = Student('Иван', 'Иванов', group_number='№43')
 student_1.about_me()
 student_1.say_group()
 
-# student_2 = Student()
-# student_2.say_hello()
-# student_2.say_group()
-#
-teacher_1 = Teacher('Петр', 'Петров', 'Петрович', 'математик')
+# teacher_1 = Teacher(
+#     speciality='математик', last_name='Петров', first_name='Петр', patronymic='Петрович'
+# )
+teacher_1 = Teacher(
+    'Петр', 'Петров', speciality='математик', patronymic='Петрович'
+)
 teacher_1.about_me()
-# teacher_1.say_group()
 teacher_1.say_speciality()
-#
-# # class hierarchy: People -> Teacher -> HeadTeacher
-teacher_2 = HeadTeacher('Эрнест', 'Сидоров', 'Сергеевич')
+
+teacher_2 = HeadTeacher('Эрнест', 'Сидоров', patronymic='Сергеевич')
 teacher_2.about_me()
 teacher_2.say_speciality()
 teacher_2.call_teachers()
