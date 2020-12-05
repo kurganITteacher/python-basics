@@ -1,17 +1,15 @@
 # DRY -> ?
 # функции
 
-w = 15
-h = 20
-area = w * h
+def calc_rectangle_area(w, h):
+    return w * h
+
+
+area = calc_rectangle_area(15, 20)  # call -> returns -> 300
 print('площадь прямоугольника', area)
 
-w = 10
-h = 30
-area = w * h
+area = calc_rectangle_area(10, 30)
 print('площадь прямоугольника', area)
 
-w = 5
-h = 25
-area = w * h
+area = calc_rectangle_area(5, 25)
 print('площадь прямоугольника', area)
