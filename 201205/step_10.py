@@ -1,5 +1,5 @@
 def show_student(group, student):
-    print('Студент группы', group, ':', student)
+    print('Студент (группа', group, '):', student)
 
 
 def show_group(group, students):
