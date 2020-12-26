@@ -20,13 +20,17 @@ for el in content_items[1:]:
     clean_ref_content = ref_content.split('href="')[1].split('"')[0]
     valid_refs.append(clean_ref_content)
 
-latest_href = valid_refs[0]
-url = f'{ROOT_URL}{latest_href}'
-print(f'downloading latest file: {url}')
-f_name = latest_href.split('/')[-1]
-f_path = os.path.join('data', f_name)
-response = requests.get(url, headers=HEADERS, stream=True)
-if response.status_code == 200:
-    with open(f_path, 'wb') as f:
-        response.raw.decode_content = True
-        shutil.copyfileobj(response.raw, f)
+print(f'valid references {len(valid_refs)}')
+# print(*valid_refs, sep='\n\n')
+
+for href in valid_refs:
+    url = f'{ROOT_URL}{href}'
+    # https://kpk.kss45.ru/attachments/article/2608/Расписание на 26-31 октября по аудиториям.xls
+    f_name = href.split('/')[-1]
+    f_path = os.path.join('data', 'timetables', f_name)
+    # print(f_path)
+    response = requests.get(url, headers=HEADERS, stream=True)
+    if response.status_code == 200:
+        with open(f_path, 'wb') as f:
+            response.raw.decode_content = True
+            shutil.copyfileobj(response.raw, f)
