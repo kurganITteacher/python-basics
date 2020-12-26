@@ -23,3 +23,4 @@ chart_len = 100
 text_items_cnt_ordered = dict(sorted(text_items_counter.items(), key=lambda x: x[1], reverse=True)[:chart_len])
 print(f'TOP-{len(text_items_cnt_ordered)}')
 print(text_items_cnt_ordered)
+# https://translate.google.com/?hl=ru&sl=ru&tl=en&text=%D0%BC%D0%B0%D0%BB%D1%8B%D1%88&op=translate
