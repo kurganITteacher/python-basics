@@ -17,15 +17,8 @@ for el in text_items:
     text_items_counter[el] = text_items_counter[el] + 1
 
 print(f'уникальных слов в тексте {len(text_items_counter)}')
-# print(text_items_counter)
-
 text_items_cnt_ordered = dict(sorted(text_items_counter.items(), key=lambda x: x[1], reverse=True))
 print(text_items_cnt_ordered)
 
-# print(text_items_counter.keys())
-# print(text_items_counter.values())
-# print(text_items_counter.items())
+# «брр-пс-пс»  громче. да…  мумия!  лучше!..»   хи-ти-ти-хи…
 
-# for el in text_items_counter.items():
-#     print(el)
-# 11:05
