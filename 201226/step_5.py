@@ -1,8 +1,3 @@
-# # «брр-пс-пс»  громче. да…  мумия!  лучше!..»   хи-ти-ти-хи…
-# bugs = ['«брр-пс-пс»', 'громче.', 'да…', 'мумия!', 'лучше!..»', 'хи-ти-ти-хи…']
-# for item in bugs:
-#     print(item, '->', item.strip('«».,?!…'))
-
 with open('data/fairy_tale_1.txt', 'r', encoding='utf-8') as f:
     content = f.read()
 
@@ -16,7 +11,6 @@ print(f'слов в тексте {text_items_cnt}')
 
 text_items_counter = {}
 for el in text_items:
-    # item.strip('«».,?!…')
     el = el.lower().strip('«».,?!…<>[]()-—+*^:;\'"')
     if not el:
         continue
@@ -25,9 +19,7 @@ for el in text_items:
     text_items_counter[el] = text_items_counter[el] + 1
 
 print(f'уникальных слов в тексте {len(text_items_counter)}')
-text_items_cnt_ordered = dict(sorted(text_items_counter.items(), key=lambda x: x[1], reverse=True))
+chart_len = 100
+text_items_cnt_ordered = dict(sorted(text_items_counter.items(), key=lambda x: x[1], reverse=True)[:chart_len])
+print(f'TOP-{len(text_items_cnt_ordered)}')
 print(text_items_cnt_ordered)
-
-# «брр-пс-пс»  громче. да…  мумия!  лучше!..»   хи-ти-ти-хи…
-
-
