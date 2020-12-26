@@ -55,5 +55,7 @@ for el in text_items:
 #     'её': 1,
 #     'Теперь': 4,
 # }
+# key: value
 
 print(f'уникальных слов в тексте {len(text_items_counter)}')
+print(text_items_counter)
