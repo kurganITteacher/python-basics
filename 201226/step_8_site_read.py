@@ -12,3 +12,7 @@ content = response.content.decode('utf-8')
 
 with open('data/kpk.kss45.ru_timetable.txt', 'w', encoding='utf-8') as f:
     f.write(content)
+
+# test -> mock
+# pip install requests
+
